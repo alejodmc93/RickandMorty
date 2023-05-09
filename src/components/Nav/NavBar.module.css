@@ -14,13 +14,26 @@
 .menu{
     display: flex;
     margin-top: -50px;
+    list-style: none;   
 }
 .home, .about{
-    padding: 45px;
+    padding: 35px;
     margin-top: -42px;
-    width: 90%;
-    height: 10%;
+    width: 30%;
+    height: 60%;
     font-family: fantasy;
     font-size: 20px;
     border-radius: 10px;
+}
+a {
+    text-decoration: none;
+    color:white;
+}
+
+.home:hover{
+    background-color:rgb(39, 65, 39);
+}
+
+.about:hover{
+    background-color:rgb(39, 65, 39);
 }

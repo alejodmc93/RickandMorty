@@ -5,17 +5,17 @@ import { Link, NavLink} from "react-router-dom";
     const NavBar = ({onSearch})=>{
         return(
             <div className={styles.navbar}>
-                <img className={styles.titulo} src="https://logos-world.net/wp-content/uploads/2022/01/Rick-And-Morty-Logo.png"/>
+                <img className={styles.titulo} src="https://logos-world.net/wp-content/uploads/2022/01/Rick-And-Morty-Logo.png" alt="titulo"/>
                 <SearchBar onSearch={onSearch}/>
 
-                <div className={styles.menu}>
+                <ul className={styles.menu}>
                 <Link to="/home">
-                    <button className={styles.home}>Home</button>
+                    <li className={styles.home}>Home</li>
                 </Link>
                 <NavLink to="/about">
-                    <button className={styles.about}>About</button>
+                    <li className={styles.about}>About</li>
                 </NavLink>
-                </div>
+                </ul>
             </div>
         )
     }
