@@ -1,0 +1,8 @@
+.card{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.ficha{
+    width: 50px;
+}

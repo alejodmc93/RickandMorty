@@ -1,0 +1,12 @@
+.App {
+    text-align: center;
+    background-image: url(https://images5.alphacoders.com/642/642551.png);
+    background-size: cover;
+    background-attachment: fixed;
+    margin:0;
+}
+/* .navbar{
+    background-color: rgb(127, 173, 127);
+    width: 100%;
+    height: 100px;
+} */

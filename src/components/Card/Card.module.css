@@ -1,0 +1,63 @@
+.carta{
+    position: relative;
+    background-color:#cccc;
+    width: fit-content;
+    border-radius: 10px;
+    margin:50px 10px;
+}
+
+.imagen{
+    border-radius: 10px;
+
+}
+
+.nombre{
+    position: absolute;
+    top: 200px;
+    left:10px;
+}
+
+.boton{
+    position:absolute;
+    border-radius: 10px;
+    top:0;
+    left: 0;
+    width: 100%;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.especie{
+    position: absolute;
+    font-size: small;
+    top:265px;
+    left:20px;
+}
+
+.genero{
+    position: absolute;
+    font-size: small;
+    top:280px;
+    left:20px;
+}
+.status{
+    position: absolute;
+    font-size: small;
+    top:250px;
+    left:20px;
+}
+
+.contenedor{
+    position:absolute;
+    background-color:#C9C9C9C9;
+    width: 100%;
+    height: 30%;
+    bottom:0;
+    opacity: 0.3;
+}
+
+.boton:hover{
+    background-color: red;
+}
+.imagen:hover{
+    border:1px solid black;
+}

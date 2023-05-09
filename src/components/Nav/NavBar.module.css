@@ -1,0 +1,26 @@
+.navbar{
+    background-color: rgb(127, 173, 127);
+    width: 100%;
+    height: 100px;
+}
+
+.titulo{    
+    width: 18%;
+    height: 100%;
+    top:100px;
+    background-color:rgb(127, 173, 127);
+}
+
+.menu{
+    display: flex;
+    margin-top: -50px;
+}
+.home, .about{
+    padding: 45px;
+    margin-top: -42px;
+    width: 90%;
+    height: 10%;
+    font-family: fantasy;
+    font-size: 20px;
+    border-radius: 10px;
+}

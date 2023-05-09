@@ -1,0 +1,19 @@
+.contenedor{
+    display: flex;
+    justify-content: space-between;
+}
+
+.descripcion{
+    background-color: #cccc;
+    border-radius: 10px;
+    margin:50px 50px;
+    padding: 50px;
+}
+
+.imagen{
+    width: 30%;
+    height: 450px;
+    border-radius: 10px;
+    margin-right: 200px;
+    margin-top: 50px;
+}

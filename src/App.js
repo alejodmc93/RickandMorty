@@ -1,25 +1,83 @@
-import logo from './logo.svg';
 import './App.css';
+import Cards from './components/Cards/Cards.jsx';
+import NavBar from './components/Nav/NavBar.jsx';
+import styles from "./App.module.css";
+import { useState, useEffect } from 'react';
+// import characters from "./data.js"
+import axios from 'axios';
+import { Routes, Route, useLocation, useNavigate } from 'react-router-dom';
+import About from './components/About/About';
+import Detail from './components/Detail/Detail';
+import Form from "./components/Form/Form";
+import userEvent from '@testing-library/user-event';
+
+// const example = {
+//    id: 1,
+//    name: 'Rick Sanchez',
+//    status: 'Alive',
+//    species: 'Human',
+//    gender: 'Male',
+//    origin: {
+//       name: 'Earth (C-137)',
+//       url: 'https://rickandmortyapi.com/api/location/1',
+//    },
+//    image: 'https://rickandmortyapi.com/api/character/avatar/1.jpeg',
+// };
+
+const email = "fmendozala@gmail.com";
+const password = "123456@";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+   const location = useLocation();
+   const navigate = useNavigate();
+   const[characters, setCharacters] = useState([]);
+   const[access, setAccess] = useState(false);
+
+   const login = (userData)=>{
+      if(userData.email===email && userData.password === password){
+         setAccess(true);
+         navigate("/home");
+      }
+   }
+
+   useEffect(()=>{
+      !access && navigate("")
+   },[access])
+   // const onSearch = (id) => {
+   //    setCharacters([...characters, example ]);
+   // };
+
+   function onSearch(id) {
+      axios(`https://rickandmortyapi.com/api/character/${id}`).then(({ data }) => {
+         if (data.name) {
+            setCharacters((oldChars) => [...oldChars, data]);
+         } else {
+            window.alert('¡No hay personajes con este ID!');
+         }
+      });
+   };
+
+   const onClose = (id)=>{
+      setCharacters(
+         characters.filter((char)=>{
+            return char.id !== Number(id)
+         })
+      )
+   };
+
+   return (
+      <div className={styles.App}>
+         {
+            location.pathname !== "/" ? <NavBar onSearch={onSearch}/> : null
+         }
+         <Routes>
+            <Route path="/" element={<Form login={login}/>}></Route>
+            <Route path="/home" element={<Cards characters={characters} onClose={onClose}/> }></Route>
+            <Route path="/about" element={<About/>}></Route>
+            <Route path="/detail/:id" element={<Detail/>}></Route>
+         </Routes>
+      </div>
+   );
 }
 
 export default App;
