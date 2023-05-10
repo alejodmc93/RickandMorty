@@ -11,19 +11,6 @@ import Detail from './components/Detail/Detail';
 import Form from "./components/Form/Form";
 import userEvent from '@testing-library/user-event';
 
-// const example = {
-//    id: 1,
-//    name: 'Rick Sanchez',
-//    status: 'Alive',
-//    species: 'Human',
-//    gender: 'Male',
-//    origin: {
-//       name: 'Earth (C-137)',
-//       url: 'https://rickandmortyapi.com/api/location/1',
-//    },
-//    image: 'https://rickandmortyapi.com/api/character/avatar/1.jpeg',
-// };
-
 const email = "fmendozala@gmail.com";
 const password = "123456@";
 
@@ -43,9 +30,6 @@ function App() {
    useEffect(()=>{
       !access && navigate("")
    },[access])
-   // const onSearch = (id) => {
-   //    setCharacters([...characters, example ]);
-   // };
 
    function onSearch(id) {
       axios(`https://rickandmortyapi.com/api/character/${id}`).then(({ data }) => {

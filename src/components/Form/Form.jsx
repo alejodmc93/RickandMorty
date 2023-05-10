@@ -1,6 +1,7 @@
 import { useState } from "react";
 import validation from "../Validation/Validation";
 import { hasFormSubmit } from "@testing-library/user-event/dist/utils";
+import styles from "./Form.module.css"
 
 const Form = ({login})=>{
     const[errors, setErrors] = useState({});
@@ -28,14 +29,14 @@ const Form = ({login})=>{
             login(userData);
         }
     return(
-        <form onSubmit={handleSubmit}>
-            <label htmlFor="email">Email</label>
-            <input type="email" name="email" value={userData.email} onChange={handleChange}/>
+        <form onSubmit={handleSubmit} className={styles.formulario}>
+            <label htmlFor="email" className={styles.login}>Email</label>
+            <input type="email" name="email" value={userData.email} onChange={handleChange} className={styles.dato}/>
             {errors.email && <p>{errors.email}</p>}
-            <label htmlFor="password">Password</label>
-            <input type="password" name="password" value={userData.password} onChange={handleChange}/>
+            <label htmlFor="password" className={styles.login}>Password</label>
+            <input type="password" name="password" value={userData.password} onChange={handleChange} className={styles.dato}/>
             {errors.password &&  <p>{errors.password}</p>}
-            <button>submit</button>
+            <button className={styles.enviar}>submit</button>
         </form>
     )
 }

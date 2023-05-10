@@ -1,0 +1,31 @@
+.formulario{
+    display: flex;
+    background-color: #cccc;
+    justify-content: center;
+    flex-direction: column;
+    margin: 50px 350px;
+    width: 20%;
+    padding: 20vh;
+    background-image: url(https://hbomax-images.warnermediacdn.com/2022-08/rick.jpg?host=wme-hbomax-drupal-prod.s3.amazonaws.com);
+    background-size: cover;
+}
+.login{
+    padding: 10px;
+    font-size: 50px;
+    font-family: fantasy;
+    background-color: #cccc;
+    border-radius: 20px;
+}
+.dato{
+    padding: 15px;
+}
+
+.enviar{
+    padding: 20px;
+    margin-top: 60px;
+    background-color: rgb(32, 92, 32);
+    border-radius: 20px;
+    font-family: fantasy;
+    font-size: 50px;
+
+}
