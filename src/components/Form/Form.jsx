@@ -15,11 +15,10 @@ const Form = ({login})=>{
             ...userData,
             [event.target.name]: event.target.value
         })
-
-        const validateErrors=validation({
+        setErrors(validation({
             ...userData,
             [event.target.name]:event.target.value
-        })
+        }))
 
         // setErrors(validateErrors)
     }
