@@ -15,6 +15,9 @@ import { Link, NavLink} from "react-router-dom";
                 <NavLink to="/about">
                     <li className={styles.about}>About</li>
                 </NavLink>
+                <NavLink to="/favorites">
+                    <li className={styles.favorites}>Favorites</li>
+                </NavLink>
                 </ul>
             </div>
         )
