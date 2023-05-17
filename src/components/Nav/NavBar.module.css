@@ -16,7 +16,9 @@
     margin-top: -50px;
     list-style: none;   
 }
-.home, .about{
+
+
+.home, .about, .favorites{
     padding: 35px;
     margin-top: -42px;
     width: 30%;
@@ -35,5 +37,9 @@ a {
 }
 
 .about:hover{
+    background-color:rgb(39, 65, 39);
+}
+
+.favorites:hover{
     background-color:rgb(39, 65, 39);
 }
