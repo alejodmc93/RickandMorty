@@ -2,23 +2,29 @@ import styles from "./Card.module.css";
 import {Link} from "react-router-dom";
 import {addFav , removeFav} from "../../Redux/action";
 import { connect } from "react-redux";
-import { useState, useEffect} from "react";
+import {useState,useEffect} from "react";
 
 const Card = ({id,name, status, species, gender, origin, image, onClose,addFav, removeFav, myFavorites})=>{
 
    const[isFav, setIsFav] = useState(false);
 
    const handleFavorite=()=>{
-      isFav ? removeFav(id):addFav({id,name, status, species, gender, origin, image, onClose});
-      setIsFav(!isFav)
-   };
+      if(isFav){
+         setIsFav(false);
+         removeFav(id);
+      }
+      else{
+         setIsFav(true);
+         addFav({id, name, species, gender, origin , image , onClose})
+      }
+   }
 
    useEffect(() => {
       myFavorites.forEach((fav) => {
          if (fav.id === id) {
             setIsFav(true);
-         }
-      });
+         }  
+      });    
    }, [myFavorites]);
 
    return (
